@@ -392,3 +392,6 @@ img {
 #m1 {
     margin-right: 10px;
 }
+.i2 , .i3, .i4, .i1 {
+    border-bottom: 1px solid black;
+}
