@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventVueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .box {
+            width: 220px;
+            height: 220px;
+            background-color: red;
+            position: relative;
+        }
+        .box-2 {
+            width: 60px;
+            height: 60px;
+            background-color: aqua;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Count: {{ counter }}</h>
+        <button v-on:click="handleClick($event, 3)">Click me</button>
+        <div class="box" v-on:mousemove="handleMouseMove">
+            <p>ClientX: {{clientX}}</p>
+            <p>ClientY: {{clientY}}</p>
+            <div class="box-2" v-on:mousemove.stop="handleMouseMoveChild"></div>
+        </div>
+        <form action="./server.php" v-on:submit.prevent="handleSubmitForm">
+            <label>Nhap FirstName</label>
+            <input type="text" name="firstname"> <br>
+            <label>Nhap email</label>
+            <input type="email" name="email"> <br>
+            <input type="submit" value="Dang Nhap">
+        </form>
+    </div>
+</body>
+    <script src="main.js"></script>
+</html>

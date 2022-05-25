@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <header class="flex justify-center text-center"><h1>Header</h1></header>
+
+    <main>
+        <div class="container">
+            <div id="app">
+                <div class="list-blog">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam voluptas beatae ipsam sit nisi praesentium ratione eos molestiae assumenda consequuntur alias nobis aliquid, inventore ad libero mollitia dignissimos voluptatem explicabo.</p>
+                </div>
+                <p class="cart">Giỏ Hàng ({{cardNumber}}) </p>
+                <div class="product flex">
+                    <div class="product-image col-8">
+                        <img v-bind:src="getProduct.image" v-bind:alt="getProduct.textColor">
+                    </div>
+                        <div class="product-content col-14">
+                            <h3 class="title">
+                                <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+                            </h3>
+                            <p class="brand">Brand: No Brand</p>
+                            <p class="quanity" v-if="getProduct.quanity > 0">Số lượng: {{getProduct.quanity}} sản phẩm</p>
+                            <p class="quanity" v-if="getProduct.quanity <= 0">Số lượng: Hết hàng</p>
+                            <div class="wrapper-price">
+                                <div class="price">{{ formatPriceSale }}</div>
+                                <div class="price-sale-inf">
+                                    <p class="price-sale">{{ formatPrice }}</p>
+                                    <p class="sale">- {{ sale * 100 }} %</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="color flex">
+                                <p class="col-5">Màu sắc</p>
+                                <div class="color-inf ">
+                                    <p>{{getProduct.textColor}}</p>
+                                    <ul>
+                                        <li v-for="(item,index) in listProductDetail"  v-bind:class="classActive(index)" v-bind:key="index" v-on:click="handleClickColor($event, index)">
+                                            <img v-bind:src="item.image" v-bind:alt="item.textColor">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="add-cart">
+                                <button v-on:click="handleAddToCart" class="text-center add-to-cart">ART TO CART</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="info">
+                <ul>
+                    <li>Chất liệu: Áo đũi vải đũi thái tự nhiên, mang lại cho người mặc cảm giác nhẹ, thoáng mát, không bám dính, không kích ứng da</li>
+                    <li>Bảng Màu Áo đũi nam có 6 màu : trắng, xanh lá, vàng, xanh than , đen và màu be </li>
+                    <li>BẢNG SIZE Áo Cộc Nam :  M (45 - 54kg) ,L (55 - 64kg ), XL( 65 - 72kg) , 2XL( 73 - 78kg), 3XL (78-85kg )</li>
+                    <li>Áo đũi nam là phụ kiện thời trang đơn giản nhưng không thể thiếu cho mùa hè. Các anh có thể mặc đồ bộ nam ờ nhà, hay dùng làm đồ mặc nhà, hay đi biển đi phượt</li>
+                </ul>
+                <div v-html="description">
+                    {{description}}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flex justify-center"><h1>Footer</h1></footer>
+</body>
+    <script src="main.js"></script>
+</html>

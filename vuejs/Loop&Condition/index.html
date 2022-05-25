@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .list-blog {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .list-blog .blog {
+            width: 20%;
+            margin: 2%;
+            border: 1px solid black;
+        }
+
+        .list.log .title {
+            font-weight: 800;
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="user" v-for="user in userActive">{{user.email}} </div>
+        <ul>
+            <li v-for="(value,key) in scores"> {{key}}: {{value}} </li>
+        </ul>
+        <div class="list-blog">
+            <div v-for="(blog, abc) in listBlog" class="blog" v-bind:key="abc">
+                <div class="title">{{ blog.title }}</div>
+                <div class="description">{{ blog.body }}</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            arrUser: [
+                {email:'test1@gmail.com', isActive:true},
+                {email:'test2@gmail.com', isActive:false},
+                {email:'test3@gmail.com', isActive:false},
+                {email:'test4@gmail.com', isActive:true},
+                {email:'test5@gmail.com', isActive:true},
+                {email:'test6@gmail.com', isActive:false},
+            ],
+            scores: {
+                math:9.5,
+                english: 8,
+                biology: 9.8
+            },
+            listBlog: [
+                {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "AAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAa",
+                    "body": "dnaudfbnewìbièngiẻnag ilèngaiẻngỉabghaubewfgăebfhủe bgfeuỉgiuebnguiẻgbei ubgaẻiugbaẻiugbaeỉub"
+                },
+                {
+                    "userId": 1,
+                    "id": 2,
+                    "title": "BBBBBBBBBBBBBBBBb",
+                    "body": "hjshrthsrthtdỵỵtdỳụyđut jsyntdymnshsrhjsryụtỵítyủhrsthsrthyaẻyhhtrhsrhtr hssrhtsrhrshnrsnrsý"
+                },
+                {
+                    "userId": 1,
+                    "id": 3,
+                    "title": "CCCCCCCCCCCCCCCCC CCCCCCCCCCCCCCCCCCCc",
+                    "body": "jtdjythsthrthahaẻ eâtuýuabẻthzxdtyhụ dtjttdj tkydutjhdtrhdt ythtrhýhtýtýtrhsỷthjtsrjythr "
+                },
+                {
+                    "userId": 1,
+                    "id": 4,
+                    "title": "AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAa",
+                    "body": "dnaudfbnewìbièngi ẻnagilèngaiẻngỉabghaubewfgăebfhủe bgfeuỉgiuebnguiẻgbeiubgaẻiugbaẻiugbaeỉub"
+                },
+                {
+                    "userId": 1,
+                    "id": 5,
+                    "title": "BBBBBBBBBBBBBBBBb",
+                    "body": "hjshrthsrthtdỵỵtdỳụyđut jsyntdymnshsrhjsryụtỵítyủhrs thsrthyaẻyhhtrhsrhtrhssrhtsrhrshnrsnrsý"
+                },
+                {
+                    "userId": 1,
+                    "id": 6,
+                    "title": "CCCCCCCCCCCCCCCCC CCCCCCCCCCCCCCCCCCCc",
+                    "body": "jtdjythsthrthahaẻ eâtuýuabẻthzxdtyhụ dtjttdj tkydutjhdtrhdt ythtrhýhtýtýtrhsỷthjtsrjythr "
+                },
+                {
+                    "userId": 1,
+                    "id": 7,
+                    "title": "AAAAAAAAAAA AAAAAAAAAAAAAA AAAAAAa",
+                    "body": "dnaudfbnewìbièng iẻnagilèngaiẻngỉabghaubewfgăebfhủe bgfeuỉgiuebnguiẻgbeiubgaẻiugbaẻiugbaeỉub"
+                },
+                {
+                    "userId": 1,
+                    "id": 8,
+                    "title": "BBBBBBBBBBBBBBBBb",
+                    "body": "hjshrthsrthtdỵỵtd ỳụyđutjsyntdymnshsrhjsryụtỵí tyủhrsthsrthyaẻyhhtrhsr htrhssrhtsrhrshnrsnrsý"
+                }, 
+                {
+                    "userId": 1,
+                    "id": 9,
+                    "title": "CCCCCCCC CCCCCCCCCCCCCCCC CCCCCCCCCCCCc",
+                    "body": "jtdjythsthrthahaẻ eâtuýuabẻthzxdtyhụ dtjttdj tkydutjhdtrhdt ythtrhýhtýtýtrhsỷthjtsrjythr "
+                },
+                {
+                    "userId": 1,
+                    "id": 10,
+                    "title": "AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAa",
+                    "body": "dnaudfbnewìbièngiẻnagilèng aiẻngỉabghaubewfgăebfhủe bgfeuỉgiuebnguiẻgbeiubgaẻiu gbaẻiugbaeỉub"
+                }
+            ]
+        },
+        methods: {
+
+        },
+        computed: {
+            userActive() {
+                var user = this.arrUser.filter(function(u){
+                    return u.isActive;
+                });
+                return user;
+            }
+        }
+    })
+</script>
+
+</html>

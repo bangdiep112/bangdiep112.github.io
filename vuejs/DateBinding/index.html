@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <header class="flex justify-center text-center"><h1>Header</h1></header>
+
+    <main>
+        <div class="container">
+            <div class="list-blog">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam voluptas beatae ipsam sit nisi praesentium ratione eos molestiae assumenda consequuntur alias nobis aliquid, inventore ad libero mollitia dignissimos voluptatem explicabo.</p>
+            </div>
+            <div class="product flex">
+                <div class="product-image justify-start col-9">
+                    <img src="https://cf.shopee.vn/file/e86689e29f6f3d7131d0a0948ef254c1" alt="">
+                </div>
+                <div id="app">
+                    <div class="product-content col-14">
+                        <h3 class="title">
+                            <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+                        </h3>
+                        <p class="brand">Brand: No Brand</p>
+                        <div class="wrapper-price">
+                            <p class="price-sale">{{ formatPrice() }}</p>
+                        </div>
+                        {{ check ? 've ben trai' : 've ben phai' }}
+                        <hr>
+                        <div class="color flex">
+                            <p class="col-5">Màu sắc</p>
+                            <div class="color-inf ">
+                                <p>Màu Beige</p>
+                                <img src="https://cf.shopee.vn/file/1657b14b218fd5962fc3508d367379fc_tn" alt="" height="90px" width="90px">
+                                <img src="https://cf.shopee.vn/file/afe17b6984db098f4e39e2f2c66a0d65_tn" alt="" height="90px" width="90px">
+                                <img src="https://cf.shopee.vn/file/f57b55f10cd11019a6b5db5a769a3e38_tn" alt="" height="90px" width="90px">
+                            </div>
+                        </div>
+                        <div class="cart">
+                            <p id="cart" class="text-center">Giỏ Hàng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Chất liệu bền chặt</h2>
+                <p>Áo thun nam polo trơn vải cá sấu cotton cao cấp mềm mịn, áo phông polo nam đẹp cổ bẻ ngắn tay có đủ bảng màu cực hot 
+                    Shop Áo Polo VNXK hân hạnh được phục vụ quý khách. Những sản phẩm mới nhất vẫn liên tục được cập nhật mỗi ngày phù hợp với nhiều lứa tuổi.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flex justify-center"><h1>Footer</h1></footer>
+</body>
+    <script src="main.js"></script>
+</html>
